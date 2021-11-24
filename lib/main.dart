@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_demo/basics_widget.dart';
+import 'package:flutter_study_demo/form_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,20 +22,35 @@ class MyAppHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter demo'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text(
-            'Basics Widget',
-            style: TextStyle(fontSize: 10),
+      body: Column(
+        children: [
+          ElevatedButton(
+            child: const Text(
+              'Basics Widget',
+              style: TextStyle(fontSize: 10),
+            ),
+            onPressed: () {
+              print("click press");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BasicsWidgetRoute()));
+            },
           ),
-          onPressed: () {
-            print("click press");
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const BasicsWidgetRoute()));
-          },
-        ),
+          ElevatedButton(
+            child: const Text(
+              'Form Widget',
+              style: TextStyle(fontSize: 10),
+            ),
+            onPressed: () {
+              print("click press");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FormTestRoute()));
+            },
+          ),
+        ],
       ),
     );
   }

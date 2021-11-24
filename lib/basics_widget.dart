@@ -41,7 +41,7 @@ class _BasicsWidgetRouteState extends State<BasicsWidgetRoute> {
             prefixIcon: Icon(Icons.lock),
           ),
           obscureText: true,
-        )
+        ),
       ]),
     );
   }
