@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_demo/basics_widget.dart';
 import 'package:flutter_study_demo/form_demo.dart';
+import 'package:flutter_study_demo/layout_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,19 @@ class MyAppHomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const FormTestRoute()));
+            },
+          ),
+          ElevatedButton(
+            child: const Text(
+              'LayoutWidget Widget',
+              style: TextStyle(fontSize: 10),
+            ),
+            onPressed: () {
+              print("click press");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LayoutWidgetWidgetRoute()));
             },
           ),
         ],
