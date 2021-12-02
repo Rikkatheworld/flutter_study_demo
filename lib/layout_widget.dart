@@ -13,7 +13,9 @@ class _LayoutWidgetWidgetRouteRouteState
   @override
   Widget build(BuildContext context) {
     Widget yellowBox =
-        const DecoratedBox(decoration: BoxDecoration(color: Colors.yellow));
+    const DecoratedBox(decoration: BoxDecoration(color: Colors.yellow));
+
+    var _children = List.filled(6, const Text("AB"));
 
     return Scaffold(
       appBar: AppBar(
@@ -120,15 +122,30 @@ class _LayoutWidgetWidgetRouteRouteState
       //     ],
       //   ),
       // ),
-      body: Container(
-        height: 120,
-        width: 120,
-        color: Colors.greenAccent,
-        child: const Center(
-          child: FlutterLogo(
-            size: 60,
-          ),
-        ),
+      // body: Container(
+      //   height: 120,
+      //   width: 120,
+      //   color: Colors.greenAccent,
+      //   child: const Center(
+      //     child: FlutterLogo(
+      //       size: 60,
+      //     ),
+      //   ),
+      // ),
+      // body: Column(
+      //   children: [
+      //     // 限制宽度为 190
+      //     SizedBox(width: 190, child: ResponsiveColumn(children: _children)),
+      //     ResponsiveColumn(children: _children),
+      //   ],
+      // ),
+      body: Builder(
+        builder: (context) {
+          return  GestureDetector(
+            child: const Text("HelloRikka"),
+            onTap: () => print(context.size), // 打印text的大小
+          );
+        },
       ),
     );
   }
@@ -172,5 +189,37 @@ class TestFlowDelegate extends FlowDelegate {
   @override
   bool shouldRepaint(FlowDelegate oldDelegate) {
     return oldDelegate != this;
+  }
+}
+
+class ResponsiveColumn extends StatelessWidget {
+  const ResponsiveColumn({Key? key, required this.children}) : super(key: key);
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    // 通过 LayoutBuild 拿到父组件传递的约束，然后判断 maxWidth 是否小于200
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth < 200) {
+            // 最大宽度小于 200 ，则显示单列
+            return Column(children: children, mainAxisSize: MainAxisSize.min);
+          } else {
+            // 大于200 则显示双列
+            var _children = <Widget>[];
+            for (var i = 0; i < children.length; i += 2) {
+              if (i + 1 < children.length) {
+                _children.add(Row(
+                  children: [children[i], children[i + 1]],
+                  mainAxisSize: MainAxisSize.min,
+                ));
+              } else {
+                _children.add(children[i]);
+              }
+            }
+            return Column(children: _children, mainAxisSize: MainAxisSize.min);
+          }
+        });
   }
 }
