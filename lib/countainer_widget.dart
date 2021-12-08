@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class ContainerWidgetWidgetRoute extends StatefulWidget {
   const ContainerWidgetWidgetRoute({Key? key}) : super(key: key);
@@ -51,18 +52,57 @@ class _ContainerWidgetWidgetRouteState
         //     child: Text("Rikka", style: TextStyle(color: Colors.white))
         //   ),
         // ),
-        Container(
-          color: Colors.yellow,
-          child: Transform(
-            alignment: Alignment.topRight, // 相对坐标系原点的对齐方式
-            transform: Matrix4.skewY(0.3), // 沿着 Y 轴倾斜 0.3
-            child: Container(
-              padding: EdgeInsets.all(8.0),
-              color: Colors.deepOrange,
-              child:  Text("This is Funker"),
-            ),
-          ),
-        )
+        // Container(
+        //   color: Colors.yellow,
+        //   child: Transform(
+        //     alignment: Alignment.topRight, // 相对坐标系原点的对齐方式
+        //     transform: Matrix4.skewY(0.3), // 沿着 Y 轴倾斜 0.3
+        //     child: Container(
+        //       padding: EdgeInsets.all(8.0),
+        //       color: Colors.deepOrange,
+        //       child: Text("This is Funker"),
+        //     ),
+        //   ),
+        // ),
+        // DecoratedBox(
+        //     decoration: BoxDecoration(color: Colors.red),
+        //     child: Transform.translate(
+        //         offset: Offset(20.0, 10.0), child: Text("Hello rikka")))
+        // DecoratedBox(
+        //     decoration: BoxDecoration(color: Colors.red),
+        //     child: Transform.rotate(
+        //       angle: math.pi/3
+        //         , child: Text("Hello rikka"))),
+        // Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
+        //   DecoratedBox(
+        //       decoration: BoxDecoration(color: Colors.red),
+        //       // 旋转90度
+        //       child: RotatedBox(quarterTurns: 1, child: Text("Hello rikka"))),
+        //   Text(
+        //     "Hello",
+        //     style: TextStyle(color: Colors.blue),
+        //   )
+        // ])
+        // Container(
+        //   margin: EdgeInsets.all(20.0),
+        //   color: Colors.blue,
+        //   child: Text("Hello Rikka"),
+        // ),
+        // Container(
+        //   padding: EdgeInsets.all(20.0),
+        //   color: Colors.blue,
+        //   child: Text("Hello Rikka"),
+        // )
+        // const Padding(
+        //     padding: EdgeInsets.all(20.0),
+        //     child: DecoratedBox(
+        //         decoration: BoxDecoration(color: Colors.blue),
+        //         child: Text("Hello Rikka"))),
+        // const DecoratedBox(
+        //     decoration: BoxDecoration(color: Colors.blue),
+        //     child: Padding(
+        //         padding: EdgeInsets.all(20.0), child: Text("Hello Rikka")))
+        FittedBox()
       ]),
     );
   }
