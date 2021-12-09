@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_study_demo/basics_widget.dart';
 import 'package:flutter_study_demo/form_demo.dart';
 import 'package:flutter_study_demo/layout_widget.dart';
+import 'package:flutter_study_demo/scaffold_demo.dart';
 import 'package:flutter_study_demo/single_line_container_widget.dart';
 
 import 'clip_widget.dart';
@@ -99,6 +100,18 @@ class MyAppHomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const SingleLineContainerWidgetRoute()));
+            },
+          ),
+          ElevatedButton(
+            child: const Text(
+              'Scaffold demo',
+              style: TextStyle(fontSize: 10),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ScaffoldWidgetRoute()));
             },
           ),
         ],
