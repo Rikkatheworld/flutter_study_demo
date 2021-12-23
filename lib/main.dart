@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_demo/basics_widget.dart';
+import 'package:flutter_study_demo/customer_scroll_view.dart';
 import 'package:flutter_study_demo/form_demo.dart';
 import 'package:flutter_study_demo/grid_view_widget.dart';
 import 'package:flutter_study_demo/layout_widget.dart';
+import 'package:flutter_study_demo/nested_scroll_view.dart';
+import 'package:flutter_study_demo/page_view_widget.dart';
 import 'package:flutter_study_demo/scaffold_demo.dart';
 import 'package:flutter_study_demo/scroll_notification_widget.dart';
 import 'package:flutter_study_demo/scroller_widget.dart';
 import 'package:flutter_study_demo/scrollercontroller_widget.dart';
 import 'package:flutter_study_demo/single_child_scroll_view.dart';
 import 'package:flutter_study_demo/single_line_container_widget.dart';
+import 'package:flutter_study_demo/sliver_appbar_widget.dart';
+import 'package:flutter_study_demo/sliver_widget.dart';
+import 'package:flutter_study_demo/tab_bar_view.dart';
 
 import 'animated_list.dart';
 import 'clip_widget.dart';
@@ -164,8 +170,7 @@ class MyAppHomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                          const ScrollerWidgetRoute()));
+                          builder: (context) => const ScrollerWidgetRoute()));
                 },
               ),
               ElevatedButton(
@@ -177,8 +182,7 @@ class MyAppHomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                          const ScrollControllerRoute()));
+                          builder: (context) => const ScrollControllerRoute()));
                 },
               ),
               ElevatedButton(
@@ -191,7 +195,7 @@ class MyAppHomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                          const ScrollNotificationRoute()));
+                              const ScrollNotificationRoute()));
                 },
               ),
               ElevatedButton(
@@ -203,8 +207,7 @@ class MyAppHomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                          const AnimatedListRoute()));
+                          builder: (context) => const AnimatedListRoute()));
                 },
               ),
               ElevatedButton(
@@ -216,12 +219,65 @@ class MyAppHomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                          const GridViewRoute()));
+                          builder: (context) => const GridViewRoute()));
                 },
               ),
+              ElevatedButton(
+                child: const Text(
+                  'PageView demo',
+                  style: TextStyle(fontSize: 10),
+                ),
+                onPressed: () {
+                  _toRoute(context, const PageViewRoute());
+                },
+              ),
+              ElevatedButton(
+                child: const Text(
+                  'TabBarView demo',
+                  style: TextStyle(fontSize: 10),
+                ),
+                onPressed: () {
+                  _toRoute(context, const TabBarViewRoute());
+                },
+              ),
+              ElevatedButton(
+                child: const Text(
+                  'CustomerScoller demo',
+                  style: TextStyle(fontSize: 10),
+                ),
+                onPressed: () {
+                  _toRoute(context, const CustomViewRoute());
+                },
+              ),
+              ElevatedButton(
+                child: const Text(
+                  'Sliver demo',
+                  style: TextStyle(fontSize: 10),
+                ),
+                onPressed: () {
+                  _toRoute(context, const SliverWidgetRoute());
+                },
+              ),
+              createButton(context, "NestedView Demo", const NestedScrollViewRoute()),
+              createButton(context, "SliverAppBar Demo", const SliverAppBarRoute()),
             ],
           ),
         ));
+  }
+
+  void _toRoute(BuildContext context, Widget route) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => route));
+  }
+
+  Widget createButton(BuildContext context, String title, Widget route) {
+    return ElevatedButton(
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 10),
+      ),
+      onPressed: () {
+        _toRoute(context, route);
+      },
+    );
   }
 }
