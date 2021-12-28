@@ -6,15 +6,19 @@ import 'package:flutter_study_demo/grid_view_widget.dart';
 import 'package:flutter_study_demo/layout_widget.dart';
 import 'package:flutter_study_demo/nested_scroll_view.dart';
 import 'package:flutter_study_demo/page_view_widget.dart';
+import 'package:flutter_study_demo/provider_widget.dart';
 import 'package:flutter_study_demo/scaffold_demo.dart';
 import 'package:flutter_study_demo/scroll_notification_widget.dart';
 import 'package:flutter_study_demo/scroller_widget.dart';
 import 'package:flutter_study_demo/scrollercontroller_widget.dart';
+import 'package:flutter_study_demo/share_data_widget.dart';
 import 'package:flutter_study_demo/single_child_scroll_view.dart';
 import 'package:flutter_study_demo/single_line_container_widget.dart';
 import 'package:flutter_study_demo/sliver_appbar_widget.dart';
 import 'package:flutter_study_demo/sliver_widget.dart';
 import 'package:flutter_study_demo/tab_bar_view.dart';
+import 'package:flutter_study_demo/theme_demo.dart';
+import 'package:flutter_study_demo/will_pop_scope.dart';
 
 import 'animated_list.dart';
 import 'clip_widget.dart';
@@ -260,6 +264,10 @@ class MyAppHomePage extends StatelessWidget {
               ),
               createButton(context, "NestedView Demo", const NestedScrollViewRoute()),
               createButton(context, "SliverAppBar Demo", const SliverAppBarRoute()),
+              createButton(context, "WillPopScope Demo", const WillPopScopeRoute()),
+              createButton(context, "InheritedWidget Demo", InheritedWidgetTestRoute()),
+              createButton(context, "Provier Demo", const ProviderRoute()),
+              createButton(context, "Theme Demo", const ThemeRoute()),
             ],
           ),
         ));
