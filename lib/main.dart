@@ -18,6 +18,7 @@ import 'package:flutter_study_demo/sliver_appbar_widget.dart';
 import 'package:flutter_study_demo/sliver_widget.dart';
 import 'package:flutter_study_demo/tab_bar_view.dart';
 import 'package:flutter_study_demo/theme_demo.dart';
+import 'package:flutter_study_demo/value_listenable_builder.dart';
 import 'package:flutter_study_demo/will_pop_scope.dart';
 
 import 'animated_list.dart';
@@ -268,6 +269,7 @@ class MyAppHomePage extends StatelessWidget {
               createButton(context, "InheritedWidget Demo", InheritedWidgetTestRoute()),
               createButton(context, "Provier Demo", const ProviderRoute()),
               createButton(context, "Theme Demo", const ThemeRoute()),
+              createButton(context, "ValueListenableBuilder Demo", const ValueListenableRoute()),
             ],
           ),
         ));
