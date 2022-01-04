@@ -3,9 +3,11 @@ import 'package:flutter_study_demo/basics_widget.dart';
 import 'package:flutter_study_demo/customer_scroll_view.dart';
 import 'package:flutter_study_demo/form_demo.dart';
 import 'package:flutter_study_demo/grid_view_widget.dart';
+import 'package:flutter_study_demo/http_client.dart';
 import 'package:flutter_study_demo/layout_widget.dart';
 import 'package:flutter_study_demo/nested_scroll_view.dart';
 import 'package:flutter_study_demo/page_view_widget.dart';
+import 'package:flutter_study_demo/path_provider_widget.dart';
 import 'package:flutter_study_demo/provider_widget.dart';
 import 'package:flutter_study_demo/scaffold_demo.dart';
 import 'package:flutter_study_demo/scroll_notification_widget.dart';
@@ -263,13 +265,21 @@ class MyAppHomePage extends StatelessWidget {
                   _toRoute(context, const SliverWidgetRoute());
                 },
               ),
-              createButton(context, "NestedView Demo", const NestedScrollViewRoute()),
-              createButton(context, "SliverAppBar Demo", const SliverAppBarRoute()),
-              createButton(context, "WillPopScope Demo", const WillPopScopeRoute()),
-              createButton(context, "InheritedWidget Demo", InheritedWidgetTestRoute()),
+              createButton(
+                  context, "NestedView Demo", const NestedScrollViewRoute()),
+              createButton(
+                  context, "SliverAppBar Demo", const SliverAppBarRoute()),
+              createButton(
+                  context, "WillPopScope Demo", const WillPopScopeRoute()),
+              createButton(
+                  context, "InheritedWidget Demo", InheritedWidgetTestRoute()),
               createButton(context, "Provier Demo", const ProviderRoute()),
               createButton(context, "Theme Demo", const ThemeRoute()),
-              createButton(context, "ValueListenableBuilder Demo", const ValueListenableRoute()),
+              createButton(context, "ValueListenableBuilder Demo",
+                  const ValueListenableRoute()),
+              createButton(
+                  context, "PathProvider Demo", const FileOperationRoute()),
+              createButton(context, "HttpClient Demo", const HttpClientRoute()),
             ],
           ),
         ));
