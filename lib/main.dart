@@ -26,6 +26,7 @@ import 'package:flutter_study_demo/will_pop_scope.dart';
 import 'animated_list.dart';
 import 'clip_widget.dart';
 import 'countainer_widget.dart';
+import 'dio_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -280,6 +281,7 @@ class MyAppHomePage extends StatelessWidget {
               createButton(
                   context, "PathProvider Demo", const FileOperationRoute()),
               createButton(context, "HttpClient Demo", const HttpClientRoute()),
+              createButton(context, "Dio Demo", const DioRoute()),
             ],
           ),
         ));

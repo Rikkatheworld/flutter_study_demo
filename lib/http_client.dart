@@ -67,7 +67,6 @@ class _HttpClientRouteState extends State<HttpClientRoute> {
 
       SecurityContext sc = SecurityContext();
       // file 为证书链
-      sc.setTrustedCertificates(file);
       HttpClient httpClient1 = HttpClient(context: sc);
 
 
